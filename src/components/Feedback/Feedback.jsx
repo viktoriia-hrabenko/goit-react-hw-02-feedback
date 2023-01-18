@@ -3,6 +3,7 @@ import { Section } from "components/Section/Section";
 import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
 import { Notification } from "components/Notification/Notification";
 import { Statistics } from "components/Statistics/Statistics";
+import css from "../Feedback/Feedback.module.css";
 
 export class Feedback extends Component {
     state = {
@@ -41,7 +42,7 @@ export class Feedback extends Component {
 
     render() {
         return (
-            <div className="Feedback">
+            <div className={css.Feedback}>
                 <Section title="Please leave feedback">
                     <FeedbackOptions
                         handleGood={this.handleGood}
@@ -51,7 +52,7 @@ export class Feedback extends Component {
                 </Section>
 
                 { this.totalFeedback() === 0 ? (
-                        <Notification message="No feedback given" />
+                        <Notification message="There is no feedback" />
                     ):(
                           <Section title="Statistics">
                             <Statistics

@@ -1,24 +1,37 @@
 button {
     font-weight: 600;
-    margin-right: 5px;
+    margin-right: 15px;
+    width: 150px;
     border: none;
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
-    transition-duration: 300ms;
+    transition-duration: 250ms;
 }
 
 button:nth-child(1) {
-    background-color: ;
-}
+    background-color: #3A5A40;  
+} 
+button:nth-child(1):hover {
+            color: white;
+            background-color: #588157;
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
 button:nth-child(2) {
-    background-color: ;
+    background-color: #1d3557f5;
 }
+button:nth-child(2):hover {
+    color: white;
+    background-color: #457B9D;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 button:nth-child(3) {
-    background-color: ;
+    background-color: #E76F51;
 }
-
-button:hover {
-    transform: scale(1.1);
+button:nth-child(3):hover {
+    color: white;
+    background-color: #F4A261;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

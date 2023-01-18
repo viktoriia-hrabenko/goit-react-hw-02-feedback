@@ -8,11 +8,11 @@ export class Statistics extends Component {
 
         return (
             <div className={css.Statistics}>
-                <span>Good: {good}</span>
-                <span>Neutral: {neutral}</span>
-                <span>Bad: {bad}</span>
-                <span>Total: {total}</span>
-                <span>Positive feedback: {positivePercentage}%</span>
+                <span className={css.Statistics__item}>Good: {good}</span>
+                <span className={css.Statistics__item}>Neutral: {neutral}</span>
+                <span className={css.Statistics__item}>Bad: {bad}</span>
+                <span className={css.Statistics__item}>Total: {total}</span>
+                <span className={css.Statistics__item}>Positive feedback: {positivePercentage}%</span>
             </div>
         )
     }
