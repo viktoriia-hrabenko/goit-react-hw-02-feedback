@@ -10,8 +10,8 @@ export class Feedback extends Component {
         good: 0,
         neutral: 0,
         bad: 0
-    };
-
+    }; 
+    
     handleGood = () => {
         this.setState({
             good: this.state.good + 1
