@@ -11,23 +11,12 @@ export class App extends Component {
         bad: 0
     }; 
     
-    handleGood = () => {
-        this.setState({
-            good: this.state.good + 1
-        })
-    }
-
-    handleNeutral = () => {
-        this.setState({
-            neutral: this.state.neutral + 1
-        })
-    }
-
-    handleBad = () => {
-        this.setState({
-            bad: this.state.bad + 1
-        })
-    }
+    addFeedback = e => {
+        const { name } = e.target;
+        this.setState(prevState => ({
+          [name]: prevState[name] + 1,
+        }));
+    };
 
     totalFeedback = () => {
         const { good, neutral, bad } = this.state;
@@ -38,15 +27,13 @@ export class App extends Component {
         return parseInt((this.state.good / this.totalFeedback()) * 100)
     }
 
-
     render() {
         return (
             <div>
                 <Section title="Please leave feedback">
                     <FeedbackOptions
-                        handleGood={this.handleGood}
-                        handleNeutral={this.handleNeutral}
-                        handleBad={this.handleBad}
+                      options={Object.keys(this.state)}
+                      addFeedback={this.addFeedback}
                     />
                 </Section>
 

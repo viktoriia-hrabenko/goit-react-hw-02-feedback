@@ -2,20 +2,27 @@ import {Component} from "react";
 import PropTypes from 'prop-types';
 import "../FeedbackOptions/FeedbackOptions.module.css";
 
-export class FeedbackOptions extends Component {
+export class FeedbackOptions extends Component {  
     render() {
-        const { handleGood, handleNeutral, handleBad } = this.props;
-
+        const { options, addFeedback } = this.props;
         return (
-        <div>
-           <button onClick={handleGood}>Good</button>
-           <button onClick={handleNeutral}>Neutral</button>
-           <button onClick={handleBad}>Bad</button>
-        </div>  
-        )
+            <div>
+                {options.map(option => (
+                    <button 
+                        type="button"
+                        key={option}
+                        name={option}
+                        onClick={addFeedback}
+                    >
+                        {option}
+                    </button>
+                ))}
+            </div>
+        );
     }
-} 
+}
 
 FeedbackOptions.propTypes = {
-  addFeedback: PropTypes.func,
+    options: PropTypes.arrayOf(PropTypes.string),
+    addFeedback: PropTypes.func,
 };
